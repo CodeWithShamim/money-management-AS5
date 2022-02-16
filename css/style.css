@@ -5,3 +5,43 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+
+/* #left-img {
+    height: 100vh;
+} */
+
+
+/* calculate button */
+
+.custom-bg-clr {
+    background-color: #f8f8f8;
+}
+
+
+/* input all item  */
+
+input[type="text"] {
+    border: none;
+    background-color: #dcdcdc;
+    border-radius: 7px;
+}
+
+input[type="text"]:focus {
+    background-color: wheat;
+    outline: none;
+}
+
+#c-btn {
+    background-color: #59a5ff;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+#s-btn {
+    border: none;
+    background-color: #59a5ff;
+    color: white;
+    font-weight: bold;
+}
