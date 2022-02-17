@@ -15,7 +15,7 @@ function updateAmount(isAmount) {
         const incomeValue = parseInt(income.value);
         const foodValue = parseInt(food.value);
         const rentValue = parseInt(rent.value);
-        const clothesValue = parseInt(clothes.value)
+        const clothesValue = parseInt(clothes.value);
 
         // Error handle 
         if (isNaN(incomeValue) || isNaN(foodValue) || isNaN(rentValue) || isNaN(clothesValue)) {
@@ -105,7 +105,7 @@ function updateAmount(isAmount) {
 const calculateButton = document.getElementById('c-btn');
 calculateButton.addEventListener('click', function() {
     // call function 
-    updateAmount(isAmount = true)
+    updateAmount(isAmount = true);
 
     // remove input value
     income.value = "";
@@ -120,7 +120,7 @@ calculateButton.addEventListener('click', function() {
 const savingsButton = document.getElementById('s-btn');
 savingsButton.addEventListener('click', function() {
     // call function 
-    const savingsDiscount = updateAmount(isAmount = false)
+    const savingsDiscount = updateAmount(isAmount = false);
 
     // remove input value
     savingsDiscount.value = "";
