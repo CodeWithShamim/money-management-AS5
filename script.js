@@ -2,6 +2,7 @@ let expensesBanance = document.getElementById('total-cost');
 let balance = document.getElementById('balance');
 
 
+
 //----------------------------function section------------------------------
 function updateAmount(isAmount) {
     // calculate area-------------------------- 
@@ -16,6 +17,8 @@ function updateAmount(isAmount) {
         const foodValue = parseInt(food.value);
         const rentValue = parseInt(rent.value);
         const clothesValue = parseInt(clothes.value);
+
+
 
         // Error handle 
         if (isNaN(incomeValue) || isNaN(foodValue) || isNaN(rentValue) || isNaN(clothesValue)) {
@@ -65,11 +68,13 @@ function updateAmount(isAmount) {
         const newBalance = balance.innerText;
         const newBalanceValue = parseInt(newBalance);
         // savings-discount
+        const incomeValue = parseInt(income.value);
         const savingsDiscount = document.getElementById('savings-discount');
         const savingsDiscountValue = parseInt(savingsDiscount.value);
-        const savingsAmountValue = (newBalanceValue * savingsDiscountValue) / 100;
+        const savingsAmountValue = (incomeValue * savingsDiscountValue) / 100;
+        console.log(savingsAmountValue)
 
-        if (savingsAmountValue > newBalance) {
+        if (savingsAmountValue > newBalanceValue) {
             document.getElementById('savings-error').style.display = "block";
             document.getElementById('savings-input-error').style.display = "none";
             document.getElementById('savings-string-error').style.display = "none";
@@ -111,11 +116,6 @@ calculateButton.addEventListener('click', function() {
     // call function 
     updateAmount(isAmount = true);
 
-    // remove input value
-    income.value = "";
-    food.value = "";
-    rent.value = "";
-    clothes.value = "";
 
 })
 
@@ -126,6 +126,4 @@ savingsButton.addEventListener('click', function() {
     // call function 
     const savingsDiscount = updateAmount(isAmount = false);
 
-    // remove input value
-    savingsDiscount.value = "";
 })
