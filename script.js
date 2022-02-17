@@ -116,7 +116,7 @@ calculateButton.addEventListener('click', function() {
 })
 
 
-// ----------------------savings button--------------------------
+// ----------------------savings button------------------------
 const savingsButton = document.getElementById('s-btn');
 savingsButton.addEventListener('click', function() {
     // call function 
