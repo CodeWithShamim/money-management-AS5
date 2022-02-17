@@ -22,6 +22,12 @@ calculateButton.addEventListener('click', function() {
     // new balance
     balance.innerText = incomeValue - totalExpenses;
 
+    // remove input value
+    income.value = "";
+    food.value = "";
+    rent.value = "";
+    clothes.value = "";
+
 })
 
 
@@ -44,4 +50,6 @@ savingsButton.addEventListener('click', function() {
     const remainingBalance = document.getElementById('remaining-balance');
     remainingBalance.innerText = newBalanceValue - savingsAmountValue;
 
+    // remove input value
+    savingsDiscount.value = "";
 })
