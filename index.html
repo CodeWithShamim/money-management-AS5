@@ -25,7 +25,7 @@
                     <img src="./images/pic.jpg" class="img-fluid rounded" id="left-img" alt="" />
                 </div>
                 <!-- right side -->
-                <div class="col-md-6 custom-bg-clr mb-5 p-5 rounded">
+                <div class="col-md-6 custom-bg-clr mb-5 p-4 rounded">
                     <div>
                         <h3 class="text-center my-4">Income</h3>
                         <!-- all input item start here -->
@@ -47,12 +47,17 @@
                             <input type="text" name="" class="mb-2 ms-2 p-2" value="500" id="clothes" />
                         </div>
                         <!-- all input item end here -->
+
                     </div>
 
                     <!-- calculate button  -->
                     <div class="text-center mt-3">
                         <button class="px-5 py-3 rounded" id="c-btn">Calculate</button>
                     </div>
+                    <!-- error start here -->
+                    <p class="text-warning text-center" id="negative-error">Warning! can't accept negative value!!</p>
+
+                    <!-- error end here -->
 
                     <!-- calculate expenses balance -->
                     <div class="text-center">

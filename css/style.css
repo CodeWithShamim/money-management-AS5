@@ -40,3 +40,10 @@ input[type="text"]:focus {
     color: white;
     font-weight: bold;
 }
+
+
+/* empty error */
+
+#negative-error {
+    display: none;
+}
