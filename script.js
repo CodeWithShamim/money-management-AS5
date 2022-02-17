@@ -12,10 +12,10 @@ function updateAmount(isAmount) {
         const clothes = document.getElementById('clothes');
 
         // get value
-        const incomeValue = parseFloat(income.value);
-        const foodValue = parseFloat(food.value);
-        const rentValue = parseFloat(rent.value);
-        const clothesValue = parseFloat(clothes.value)
+        const incomeValue = parseInt(income.value);
+        const foodValue = parseInt(food.value);
+        const rentValue = parseInt(rent.value);
+        const clothesValue = parseInt(clothes.value)
 
         // Error handle 
         if (isNaN(incomeValue) || isNaN(foodValue) || isNaN(rentValue) || isNaN(clothesValue)) {
@@ -52,9 +52,7 @@ function updateAmount(isAmount) {
                     document.getElementById('balance-error').style.display = 'block';
                     document.getElementById('negative-error').style.display = "none";
                     document.getElementById('string-error').style.display = "none";
-
-                    const text = "??"
-                    balance.innerText = text;
+                    balance.innerText = 00;
                 }
 
             }
@@ -65,10 +63,10 @@ function updateAmount(isAmount) {
     else if (isAmount == false) {
         // new balance - discount
         const newBalance = balance.innerText;
-        const newBalanceValue = parseFloat(newBalance);
+        const newBalanceValue = parseInt(newBalance);
         // savings-discount
         const savingsDiscount = document.getElementById('savings-discount');
-        const savingsDiscountValue = parseFloat(savingsDiscount.value);
+        const savingsDiscountValue = parseInt(savingsDiscount.value);
         const savingsAmountValue = (newBalanceValue * savingsDiscountValue) / 100;
 
         if (savingsAmountValue > newBalance) {
