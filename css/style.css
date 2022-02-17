@@ -44,6 +44,10 @@ input[type="text"]:focus {
 
 /* empty error */
 
-#negative-error {
+#negative-error,
+#string-error,
+#savings-error,
+#savings-input-error,
+#savings-string-error {
     display: none;
 }

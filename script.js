@@ -2,8 +2,9 @@ let expensesBanance = document.getElementById('total-cost');
 let balance = document.getElementById('balance');
 
 
-//----------------------------calculate section using function------------------------------
+//----------------------------function section------------------------------
 function updateAmount(isAmount) {
+    // calculate area-------------------------- 
     if (isAmount == true) {
         const income = document.getElementById('income');
         const food = document.getElementById('food');
@@ -16,29 +17,36 @@ function updateAmount(isAmount) {
         const rentValue = parseFloat(rent.value);
         const clothesValue = parseFloat(clothes.value)
 
-        // income.value == '' || food.value == '' || rent.value == '' || clothes.value == ''
-
-        if (incomeValue < 0 || foodValue < 0 || rentValue < 0 || clothesValue < 0) {
-            document.getElementById('negative-error').style.display = "block";
-
-
-        } else {
-            // total cost
-            const totalExpenses = foodValue + rentValue + clothesValue;
-            expensesBanance.innerText = totalExpenses;
-
-            // new balance
-            balance.innerText = incomeValue - totalExpenses;
-
+        // Error handle 
+        if (isNaN(incomeValue) || isNaN(foodValue) || isNaN(rentValue) || isNaN(clothesValue)) {
+            document.getElementById('string-error').style.display = "block";
             document.getElementById('negative-error').style.display = "none";
 
         }
+        // -----------
+        else {
+            if (incomeValue < 0 || foodValue < 0 || rentValue < 0 || clothesValue < 0) {
+                document.getElementById('negative-error').style.display = "block";
+                document.getElementById('string-error').style.display = "none";
 
 
+            } else {
+                // total cost
+                const totalExpenses = foodValue + rentValue + clothesValue;
+                expensesBanance.innerText = totalExpenses;
 
+                // new balance
+                balance.innerText = incomeValue - totalExpenses;
 
+                document.getElementById('negative-error').style.display = "none";
+                document.getElementById('string-error').style.display = "none";
 
-    } else if (isAmount == false) {
+            }
+        }
+    }
+
+    //--------- ----------savings area--------------------- 
+    else if (isAmount == false) {
         // new balance - discount
         const newBalance = balance.innerText;
         const newBalanceValue = parseFloat(newBalance);
@@ -47,14 +55,34 @@ function updateAmount(isAmount) {
         const savingsDiscountValue = parseFloat(savingsDiscount.value);
         const savingsAmountValue = (newBalanceValue * savingsDiscountValue) / 100;
 
-        // savingsAmount set 
-        const savingsAmount = document.getElementById('savings-amount');
-        savingsAmount.innerText = savingsAmountValue;
+        if (savingsAmountValue > newBalance) {
+            document.getElementById('savings-error').style.display = "block";
+            document.getElementById('savings-input-error').style.display = "none";
+            document.getElementById('savings-string-error').style.display = "none";
+        }
+        // --------
+        else {
+            if (savingsDiscountValue < 0) {
+                document.getElementById('savings-input-error').style.display = "block";
+                document.getElementById('savings-error').style.display = "none";
+                document.getElementById('savings-string-error').style.display = "none";
+            } else {
+                if (isNaN(savingsDiscountValue)) {
+                    document.getElementById('savings-string-error').style.display = "block";
+                    document.getElementById('savings-input-error').style.display = "none";
+                    document.getElementById('savings-error').style.display = "none";
+                } else {
+                    // savingsAmount set 
+                    const savingsAmount = document.getElementById('savings-amount');
+                    savingsAmount.innerText = savingsAmountValue;
 
-        // Remaining balance 
-        const remainingBalance = document.getElementById('remaining-balance');
-        remainingBalance.innerText = newBalanceValue - savingsAmountValue;
-        return savingsDiscount;
+                    // Remaining balance 
+                    const remainingBalance = document.getElementById('remaining-balance');
+                    remainingBalance.innerText = newBalanceValue - savingsAmountValue;
+                    return savingsDiscount;
+                }
+            }
+        }
     }
 }
 

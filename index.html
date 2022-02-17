@@ -25,7 +25,7 @@
                     <img src="./images/pic.jpg" class="img-fluid rounded" id="left-img" alt="" />
                 </div>
                 <!-- right side -->
-                <div class="col-md-6 custom-bg-clr mb-5 p-4 rounded">
+                <div class="col-md-6 custom-bg-clr mb-5 rounded">
                     <div>
                         <h3 class="text-center my-4">Income</h3>
                         <!-- all input item start here -->
@@ -55,7 +55,9 @@
                         <button class="px-5 py-3 rounded" id="c-btn">Calculate</button>
                     </div>
                     <!-- error start here -->
-                    <p class="text-warning text-center" id="negative-error">Warning! can't accept negative value!!</p>
+                    <p class="text-warning text-center" id="negative-error">Warning! can't accept <span class="fw-bold">Negative</span> number!!
+                    </p>
+                    <p class="text-warning text-center" id="string-error">Warning! can't accept <span class="fw-bold">String</span> value!!</p>
 
                     <!-- error end here -->
 
@@ -75,6 +77,11 @@
                         </div>
                     </div>
                     <!-- savings section end here -->
+                    <!-- error start here -->
+                    <p class="text-warning text-center" id="savings-error">Warning! You can't savings right now. because your account balance is low!!</p>
+                    <p class="text-warning text-center" id="savings-input-error">Sorry! Use Positive value!!</p>
+                    <p class="text-warning text-center" id="savings-string-error">Warning! can't accept <span class="fw-bold">String</span> value!!</p>
+                    <!-- error start here -->
 
                     <!-- calculate savings balance -->
                     <div class="text-center">
