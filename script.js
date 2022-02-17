@@ -93,7 +93,10 @@ function updateAmount(isAmount) {
                     // Remaining balance 
                     const remainingBalance = document.getElementById('remaining-balance');
                     remainingBalance.innerText = newBalanceValue - savingsAmountValue;
-                    return savingsDiscount;
+                    document.getElementById('savings-string-error').style.display = "none";
+                    document.getElementById('savings-input-error').style.display = "none";
+                    document.getElementById('savings-error').style.display = "none";
+
                 }
             }
         }
