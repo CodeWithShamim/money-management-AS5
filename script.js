@@ -72,7 +72,6 @@ function updateAmount(isAmount) {
         const savingsDiscount = document.getElementById('savings-discount');
         const savingsDiscountValue = parseInt(savingsDiscount.value);
         const savingsAmountValue = (incomeValue * savingsDiscountValue) / 100;
-        console.log(savingsAmountValue)
 
         if (savingsAmountValue > newBalanceValue) {
             document.getElementById('savings-error').style.display = "block";
