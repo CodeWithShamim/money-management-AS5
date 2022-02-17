@@ -88,11 +88,12 @@ function updateAmount(isAmount) {
                 } else {
                     // savingsAmount set 
                     const savingsAmount = document.getElementById('savings-amount');
-                    savingsAmount.innerText = savingsAmountValue;
+                    savingsAmount.innerText = savingsAmountValue.toFixed(2);
 
                     // Remaining balance 
                     const remainingBalance = document.getElementById('remaining-balance');
-                    remainingBalance.innerText = newBalanceValue - savingsAmountValue;
+                    const updateRemainingValue = newBalanceValue - savingsAmountValue;
+                    remainingBalance.innerText = updateRemainingValue.toFixed(2);
                     document.getElementById('savings-string-error').style.display = "none";
                     document.getElementById('savings-input-error').style.display = "none";
                     document.getElementById('savings-error').style.display = "none";
