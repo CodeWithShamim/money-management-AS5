@@ -21,16 +21,21 @@ function updateAmount(isAmount) {
         if (isNaN(incomeValue) || isNaN(foodValue) || isNaN(rentValue) || isNaN(clothesValue)) {
             document.getElementById('string-error').style.display = "block";
             document.getElementById('negative-error').style.display = "none";
+            document.getElementById('balance-error').style.display = 'none';
 
         }
+
         // -----------
         else {
             if (incomeValue < 0 || foodValue < 0 || rentValue < 0 || clothesValue < 0) {
                 document.getElementById('negative-error').style.display = "block";
                 document.getElementById('string-error').style.display = "none";
+                document.getElementById('balance-error').style.display = 'none';
 
 
             } else {
+
+
                 // total cost
                 const totalExpenses = foodValue + rentValue + clothesValue;
                 expensesBanance.innerText = totalExpenses;
@@ -40,6 +45,17 @@ function updateAmount(isAmount) {
 
                 document.getElementById('negative-error').style.display = "none";
                 document.getElementById('string-error').style.display = "none";
+                document.getElementById('balance-error').style.display = 'none';
+
+                // ------------
+                if (incomeValue < expensesBanance.innerText) {
+                    document.getElementById('balance-error').style.display = 'block';
+                    document.getElementById('negative-error').style.display = "none";
+                    document.getElementById('string-error').style.display = "none";
+
+                    const text = "??"
+                    balance.innerText = text;
+                }
 
             }
         }
@@ -85,6 +101,7 @@ function updateAmount(isAmount) {
         }
     }
 }
+
 
 //-------------------calculate button-------------------------
 const calculateButton = document.getElementById('c-btn');

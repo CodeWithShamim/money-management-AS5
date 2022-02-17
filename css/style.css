@@ -16,13 +16,13 @@
 
 /* input all item  */
 
-input[type="text"] {
+input[type="number"] {
     border: none;
     background-color: #dcdcdc;
     border-radius: 7px;
 }
 
-input[type="text"]:focus {
+input[type="number"]:focus {
     background-color: wheat;
     outline: none;
 }
@@ -48,6 +48,7 @@ input[type="text"]:focus {
 #string-error,
 #savings-error,
 #savings-input-error,
-#savings-string-error {
+#savings-string-error,
+#balance-error {
     display: none;
 }

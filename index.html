@@ -31,20 +31,20 @@
                         <!-- all input item start here -->
                         <div class="d-md-flex justify-content-center align-items-center">
                             <p class="w-25 text-md-end">Income:</p>
-                            <input type="text" name="" class="mb-2 ms-2 p-2" placeholder="Income" id="income" />
+                            <input type="number" name="" class="mb-2 ms-2 p-2" placeholder="Income" id="income" />
                         </div>
                         <h3 class="text-center my-4">Expenses</h3>
                         <div class="d-md-flex justify-content-center align-items-center">
                             <p class="w-25 text-md-end">Food:</p>
-                            <input type="text" name="" class="mb-2 ms-2 p-2" placeholder="Food cost" id="food" />
+                            <input type="number" name="" class="mb-2 ms-2 p-2" placeholder="Food cost" id="food" />
                         </div>
                         <div class="d-md-flex justify-content-center align-items-center">
                             <p class="w-25 text-md-end">Rent:</p>
-                            <input type="text" name="" class="mb-2 ms-2 p-2" placeholder="Rent cost" id="rent" />
+                            <input type="number" name="" class="mb-2 ms-2 p-2" placeholder="Rent cost" id="rent" />
                         </div>
                         <div class="d-md-flex justify-content-center align-items-center">
                             <p class="w-25 text-md-end">Clothes:</p>
-                            <input type="text" name="" class="mb-2 ms-2 p-2" placeholder="Clothes cost" id="clothes" />
+                            <input type="number" name="" class="mb-2 ms-2 p-2" placeholder="Clothes cost" id="clothes" />
                         </div>
                         <!-- all input item end here -->
 
@@ -57,12 +57,13 @@
                     <!-- error start here -->
                     <p class="text-warning text-center" id="negative-error">Warning! can't accept <span class="fw-bold">Negative</span> number!!
                     </p>
-                    <p class="text-warning text-center" id="string-error">Warning! can't accept <span class="fw-bold">String</span> value!!</p>
+                    <p class="text-danger text-center" id="string-error">Warning! Please insert <span class="fw-bold">a</span> value!!</p>
+                    <p class="text-warning text-center" id="balance-error">ohh! your<span class="fw-bold">Balance</span> is low!!</p>
 
                     <!-- error end here -->
 
                     <!-- calculate expenses balance -->
-                    <div class="text-center">
+                    <div class="text-center" id="balance-update">
                         <h5 class="mt-4">Total Expenses: <span id="total-cost">00</span> ৳</h2>
                             <h5 class="mt-4">Balance: <span id="balance">00</span> ৳</h5>
                     </div>
@@ -71,7 +72,7 @@
                     <div class="mt-4">
                         <div class="d-md-flex justify-content-center align-items-center">
                             <p>Save:</p>
-                            <input type="text" name="" class="mb-2 ms-2 p-2" placeholder="Savings %" id="savings-discount" /> <span class="mx-2">%</span>
+                            <input type="number" name="" class="mb-2 ms-2 p-2" placeholder="Savings %" id="savings-discount" /> <span class="mx-2">%</span>
                             <input type="button" value="Save" class="mb-2 ms-2 px-5 py-2 rounded" id="s-btn" />
 
                         </div>
@@ -80,7 +81,7 @@
                     <!-- error start here -->
                     <p class="text-warning text-center" id="savings-error">Warning! You can't savings right now. because your account balance is low!!</p>
                     <p class="text-warning text-center" id="savings-input-error">Sorry! Use Positive value!!</p>
-                    <p class="text-warning text-center" id="savings-string-error">Warning! can't accept <span class="fw-bold">String</span> value!!</p>
+                    <p class="text-warning text-center" id="savings-string-error">Warning! Please insert <span class="fw-bold">A</span> value!!</p>
                     <!-- error start here -->
 
                     <!-- calculate savings balance -->
